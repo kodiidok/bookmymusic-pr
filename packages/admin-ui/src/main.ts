@@ -2,8 +2,8 @@ import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { loadAppConfig } from '@vendure/admin-ui/core';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import { AppModule } from './app.module';
+import { environment } from './environment';
 
 if (environment.production) {
     enableProdMode();
@@ -11,7 +11,7 @@ if (environment.production) {
 
 loadAppConfig()
     .then(() => platformBrowserDynamic().bootstrapModule(AppModule))
-    .catch(err => {
+    .catch((err: any) => {
         /* eslint-disable no-console */
         console.log(err);
     });

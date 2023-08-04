@@ -5,13 +5,14 @@
   },
   "files": [
     "main.ts",
-    "./lib/static/polyfills.ts"
+    "polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "**/*.d.ts"
   ],
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
+    "strictMetadataEmit": true,
+    "fullTemplateTypeCheck": false,
     "strictInjectionParameters": true
   }
 }
