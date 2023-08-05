@@ -1,9 +1,12 @@
-// import { VendurePlugin } from "@vendure/core";
+import { VendurePlugin } from '@vendure/core';
 
-// @VendurePlugin({
-//   configuration: config => {
-//     config.customFields.Product.push({
-//       type:
-//     })
-//   }
-// })
+@VendurePlugin({
+    configuration: config => {
+        config.customFields.Product.push({
+            type: 'string',
+            name: 'catImageUrl',
+        });
+        return config;
+    },
+})
+export class RandomCatPlugin {}
