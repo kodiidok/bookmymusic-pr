@@ -6,7 +6,7 @@ import { devConfig } from './dev-config';
 program
     .command('generate <name>')
     .description('Generate a new migration file with the given name')
-    .action(name => {
+    .action((name: any) => {
         return generateMigration(devConfig, { name, outputDir: './migrations' });
     });
 

@@ -11,7 +11,9 @@
         "start": "concurrently yarn:run*",
         "load-test:1k": "node -r ts-node/register load-testing/run-load-test.ts 1000",
         "load-test:10k": "node -r ts-node/register load-testing/run-load-test.ts 10000",
-        "load-test:100k": "node -r ts-node/register load-testing/run-load-test.ts 100000"
+        "load-test:100k": "node -r ts-node/register load-testing/run-load-test.ts 100000",
+        "gen:migration": "node -r ts-node/register migration.ts generate migration",
+        "run:migration": "node -r ts-node/register migration.ts run"
     },
     "dependencies": {
         "@vendure/admin-ui-plugin": "^2.0.5",
