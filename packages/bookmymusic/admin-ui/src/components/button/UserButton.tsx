@@ -24,11 +24,11 @@ const useStyles = createStyles((theme) => ({
 interface UserButtonProps extends UnstyledButtonProps {
   image: string;
   name: string;
-  email: string;
+  role: string;
   icon?: React.ReactNode;
 }
 
-export function UserButton({ image, name, email, icon, ...others }: UserButtonProps) {
+export function UserButton({ image, name, role, icon, ...others }: UserButtonProps) {
   const { classes } = useStyles();
 
   return (
@@ -42,7 +42,7 @@ export function UserButton({ image, name, email, icon, ...others }: UserButtonPr
           </Text>
 
           <Text color="dimmed" size="xs">
-            {email}
+            {role}
           </Text>
         </div>
 

@@ -2,17 +2,18 @@
 
 import styles from '../../page.module.css';
 
-import { NavbarNested } from '@/components/Navbar';
-import Table from '@/components/Table';
+import Shell from '@/components/shell/Shell';
+import Table from '@/components/table/Table';
 
 export default function Home() {
     return (
-        <main className={styles.main}>
-            <NavbarNested></NavbarNested>
-            <div className={`${styles.div} ${styles.hero}`}>
-                <h1>Tickets</h1>
-                <Table></Table>
-            </div>
-        </main>
+        <Shell 
+            children={
+                <>
+                    <h1>Tickets</h1>
+                    <Table></Table>
+                </>
+            }
+        />
     );
 }

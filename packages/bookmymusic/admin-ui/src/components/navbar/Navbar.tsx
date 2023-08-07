@@ -8,8 +8,8 @@ import {
   IconAdjustments,
   IconLock,
 } from '@tabler/icons-react';
-import { UserButton } from '../components/UserButton';
-import { LinksGroup } from '../components/NavbarLinksGroup';
+import { UserButton } from '../button/UserButton';
+import { LinksGroup } from './NavbarLinksGroup';
 // import { Logo } from './Logo';
 
 const mockdataCore = [
@@ -39,9 +39,6 @@ const mockdataCore = [
       { label: 'Direct', link: '/' },
     ],
   },
-];
-
-const mockdataPeople = [
   {
     label: 'Managers',
     icon: IconNotes,
@@ -115,11 +112,10 @@ const useStyles = createStyles((theme) => ({
 export function NavbarNested() {
   const { classes } = useStyles();
   const linksCore = mockdataCore.map((item) => <LinksGroup {...item} key={item.label} />);
-  const linksPeople = mockdataPeople.map((item) => <LinksGroup {...item} key={item.label} />);
   const linksUtil = mockdataUtil.map((item) => <LinksGroup {...item} key={item.label} />);
 
   return (
-    <Navbar height={900} width={{ sm: 300 }} p="md" className={classes.navbar}>
+    <Navbar height={1000} width={{ sm: 300 }} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.header}>
         <Group position="apart">
           {/* <Logo width={rem(120)} /> */}
@@ -131,20 +127,8 @@ export function NavbarNested() {
         <div className={classes.linksInner}>{linksCore}</div>
       </Navbar.Section>
 
-      <Navbar.Section grow className={classes.links}>
-        <div className={classes.linksInner}>{linksPeople}</div>
-      </Navbar.Section>
-
-      <Navbar.Section grow className={classes.links}>
+      <Navbar.Section grow className={classes.footer}>
         <div className={classes.linksInner}>{linksUtil}</div>
-      </Navbar.Section>
-
-      <Navbar.Section className={classes.footer}>
-        <UserButton
-          image="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
-          name="Ann Nullpointer"
-          email="anullpointer@yahoo.com"
-        />
       </Navbar.Section>
     </Navbar>
   );

@@ -16,3 +16,8 @@
 .hero {
   padding-top: 2rem;
 }
+
+.userbtn {
+  display: flex;
+  float: right;
+}
