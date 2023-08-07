@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "dev:3001": "next dev --port 3001"
+    "dev:3001": "next dev --port 3001",
+    "proxy:3030": "next proxy-server.mjs",
+    "dev:proxy": "concurrently \"npm run dev:3001\" \"npm run proxy:3030\"",
+    "dev:new": "node server.mjs"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.17",
     "@emotion/react": "^11.11.1",
     "@mantine/carousel": "^6.0.17",
     "@mantine/core": "^6.0.17",
@@ -29,11 +33,17 @@
     "embla-carousel-react": "^7.1.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "graphql": "^16.7.1",
     "mantine-datatable": "^2.9.4",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-relay": "^15.0.0",
     "react-router-dom": "^6.14.2",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "relay-compiler": "^15.0.0"
   }
 }
